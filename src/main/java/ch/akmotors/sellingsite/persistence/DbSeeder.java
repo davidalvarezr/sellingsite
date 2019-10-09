@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 
-@Service
+// @Service // <-- comment this to prevent the seed
 public class DbSeeder implements CommandLineRunner {
 
     private AdRepository adRepository;
