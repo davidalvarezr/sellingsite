@@ -8,6 +8,7 @@ import java.util.Date;
 
 // TODO: TEST THIS CLASS
 @RestController
+@CrossOrigin
 @RequestMapping("${endpoint}/ads")
 public class AdController implements IAdController {
     private AdRepository adRepository;

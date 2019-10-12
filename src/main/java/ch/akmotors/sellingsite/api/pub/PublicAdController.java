@@ -4,15 +4,13 @@ import ch.akmotors.sellingsite.model.db.Ad;
 import ch.akmotors.sellingsite.persistence.AdRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.TextCriteria;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 // TODO: TEST THIS CLASS
 @RestController
+@CrossOrigin
 @RequestMapping("${public.endpoint}/ads")
 public class PublicAdController implements IPublicAdController {
 
