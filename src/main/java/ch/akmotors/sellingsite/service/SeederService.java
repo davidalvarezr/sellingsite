@@ -17,12 +17,13 @@ import java.util.Collection;
 public class SeederService {
 
     public Collection<Ad> createAdCollectionSample() throws Exception {
-        Ad ad1 = new Ad(
+        /*Ad ad1 = new Ad(
                 "1",
                 "Mercedes AMG",
                 "Description of Mercedes AMG",
                 14900,
                 new String[]{"1-1.jpg", "1-2.jpg"},
+                 false,
                 new Car(
                         VehicleType.CAR,
                         "Mercedes",
@@ -44,6 +45,7 @@ public class SeederService {
                 "Description of Yamaha R6 2017",
                 9000,
                 new String[]{"2-1.jpg", "2-2.jpg"},
+                 false,
                 null,
                 new TwoWheelers(
                         VehicleType.MOTORBIKE,
@@ -66,6 +68,7 @@ public class SeederService {
                 "Description of Peugeot SpeedFight 3",
                 1700,
                 new String[]{"3-1.jpg", "3-2.jpg"},
+               false,
                 null,
                 new TwoWheelers(
                         VehicleType.SCOOTER,
@@ -89,6 +92,7 @@ public class SeederService {
                 "Description of Cool VTT",
                 1190,
                 new String[]{"3-1.jpg", "3-2.jpg"},
+                false,
                 null,
                 null,
                 new Bike(
@@ -104,7 +108,8 @@ public class SeederService {
         );
 
 
-        return Arrays.asList(new Ad[]{ad1, ad2, ad3, ad4});
+        return Arrays.asList(new Ad[]{ad1, ad2, ad3, ad4});*/
+        return Arrays.asList();
     }
 
     /**
@@ -113,12 +118,13 @@ public class SeederService {
      * @throws Exception
      */
     public Ad getAd1() throws Exception {
-        return new Ad(
+        /*return new Ad(
                 "102",
                 "Mercedes AMG",
                 "Description of Mercedes AMG",
                 14900,
                 new String[]{"1-1.jpg", "1-2.jpg"},
+               false,
                 new Car(
                         VehicleType.CAR,
                         "Mercedes",
@@ -132,7 +138,8 @@ public class SeederService {
                         400,
                         2),
                 null,
-                null);
+                null);*/
+        return null;
     }
 
     /**
@@ -141,12 +148,13 @@ public class SeederService {
      * @throws Exception
      */
     public Ad getAd1updated() throws Exception {
-        return new Ad(
+        /*return new Ad(
                 "102",
                 "Mercedes AMG",
                 "Description of Mercedes AMG",
                 14900,
                 new String[]{"1-1.jpg", "1-2.jpg"},
+                 false,
                 new Car(
                         VehicleType.CAR,
                         "Mercedes",
@@ -160,6 +168,8 @@ public class SeederService {
                         400,
                         2),
                 null,
-                null);
+                null);*/
+        return null;
     }
+
 }

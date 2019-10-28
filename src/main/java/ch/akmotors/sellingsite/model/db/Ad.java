@@ -10,25 +10,28 @@ import java.util.Date;
 public class Ad {
     @Id
     private String id;
-    @TextIndexed
+    @TextIndexed // --> To use the search
     private String title;
     @TextIndexed
     private String description;
     private Date publicationDate;
     private int priceCHF; // CHF
-    private String[] pictures;
+    private String[] images;
+    private int imageNb;
+    private boolean deleted = false;
+    private boolean sold = false;
 
     // Only one of them can exist others must be null
     private Car car;
     private TwoWheelers twoWheelers;
     private Bike bike;
 
-    public Ad(String id, String title, String description, int priceCHF, String[] pictures, Car car, TwoWheelers twoWheelers, Bike bike) throws Exception {
+    public Ad(String id, String title, String description, int priceCHF, int imageNb, Car car, TwoWheelers twoWheelers, Bike bike) throws Exception {
         this.id = id;
         this.title = title;
         this.description = description;
         this.priceCHF = priceCHF;
-        this.pictures = pictures;
+        this.imageNb = imageNb;
         this.car = car;
         this.twoWheelers = twoWheelers;
         this.bike = bike;
@@ -38,6 +41,7 @@ public class Ad {
 
     /**
      * Check whether only one type of vehicle is given
+     *
      * @throws Exception
      */
     private void checkConsistency() throws Exception {
@@ -66,12 +70,32 @@ public class Ad {
         return publicationDate;
     }
 
+    public void setPublicationDate(Date publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
     public int getPriceCHF() {
         return priceCHF;
     }
 
-    public String[] getPictures() {
-        return pictures;
+    public String[] getImages() {
+        return images;
+    }
+
+    public void setImages(String[] images) {
+        this.images = images;
+    }
+
+    public int getImageNb() {
+        return imageNb;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     public Car getCar() {
@@ -86,7 +110,11 @@ public class Ad {
         return bike;
     }
 
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
+    public boolean isSold() {
+        return sold;
+    }
+
+    public void setSold(boolean sold) {
+        this.sold = sold;
     }
 }

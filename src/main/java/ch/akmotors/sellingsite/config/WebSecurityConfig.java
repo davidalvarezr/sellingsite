@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 
 //    private final String PUBLIC_ENDPOINT = "akmotors/sellingsite/api/v1/public/authenticate";
     private final String PUBLIC_ENDPOINT = "authenticate";
@@ -74,4 +74,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.cors();
     }
 
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/v1/**")
+                .allowedOrigins("*")
+                .allowedHeaders("*")
+                .allowedMethods("GET", "POST", "DELETE", "PUT", "OPTIONS")
+                .maxAge(1800);
+    }
 }

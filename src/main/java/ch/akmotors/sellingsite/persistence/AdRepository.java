@@ -11,4 +11,6 @@ import java.util.Collection;
 @Repository
 public interface AdRepository extends MongoRepository<Ad, String>, QuerydslPredicateExecutor<Ad> {
     Collection<Ad> findAllBy(TextCriteria textCriteria);
+    Collection<Ad> findByDeletedIsFalse();
+    Collection<Ad> findByDeletedIsTrue();
 }

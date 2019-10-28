@@ -20,10 +20,22 @@ public class PublicAdController implements IPublicAdController {
         this.adRepository = adRepository;
     }
 
-    @GetMapping("all")
+    @GetMapping
     @Override
     public Collection<Ad> all() {
         return this.adRepository.findAll();
+    }
+
+    @GetMapping("notDeleted")
+    @Override
+    public Collection<Ad> allNotDeleted() {
+        return this.adRepository.findByDeletedIsFalse();
+    }
+
+    @GetMapping("deleted")
+    @Override
+    public Collection<Ad> allDeleted() {
+        return this.adRepository.findByDeletedIsTrue();
     }
 
     @GetMapping("{id}")
